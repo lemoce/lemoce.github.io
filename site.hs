@@ -95,9 +95,6 @@ main = hakyll $ do
             posts <- fmap (take 10) . recentFirst =<< loadAll "posts/*"
             renderAtom myFeedConfiguration feedCtx posts
 
-    create ["stats.php"] $ do
-        route idRoute
-        compile copyFileCompiler
 
 --------------------------------------------------------------------------------
 postCtx :: Context String
