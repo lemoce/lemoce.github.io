@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Blog - Utilizando o pcre2grep</title>
+        <link rel="stylesheet" href="../css/default.css" />
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="../">My Hakyll Blog</a>
+            </div>
+            <nav>
+                <a href="../">Home</a>
+                <a href="../about.html">Sobre</a>
+                <a href="../contact.html">Contato</a>
+                <a href="../archive.html">Arquivo</a>
+            </nav>
+        </header>
+
+        <main role="main">
+            <h1>Utilizando o pcre2grep</h1>
+            <article>
+    <section class="header">
+        Postado em Segunda-feira, 12 de novembro de 2018
+        
+    </section>
+    <section class="header">    
+	
+	    Tags: <a href="../tags/computacao.html">computacao</a>, <a href="../tags/unix.html">unix</a>, <a href="../tags/shell.html">shell</a>
+	
+    </section>
+    <section>
+        <p>Quando eu estudei programação da Windows API com C, eu fiz um grep utilizando a biblioteca <a href="https://www.pcre.org/">pcre2</a>. Nesse momento, eu somente utilizei com a finalidade de estudar a api do Windows, mas eu percebi que tinha algumas vantagens, por exemplo, usar o perl regex. O perl regex é muito mais fexível que o POSIX regex, permite casamento menos verborrágico. Java e Python utilizam esse padrão para criar os patterns de regex. Um ponto negativo é o fato do seu sistema não ter nativamente a api para a utilização, dessa forma é necessário compilar do fonte.</p>
+<p>De vez em quando, eu preciso fazer análises de logs. Recorrentemente, eu volto aos programas porque não é uma tarefa que faço rotineiramente. Assim, eu tenho que lembrar das ferramentas que fiz para poder jogar os dados no banco de dados. Mas, agora que passou muito tempo a minha idéia original foi toda desfigurada, eu tenho que me reinventar para entender a nova situação de hoje.</p>
+<p>Voltando ao pcre2grep, vou dar um exemplo:</p>
+<pre class="shell"><code>pcre2grep --output='&lt;pcre_regex_replace&gt;' -e &quot;&lt;pcre_regex&gt;&quot;</code></pre>
+<p>Veja como é simples. Agora, é só usar a <a href="http://perldoc.perl.org/perlre.html">perlre</a>. Alguns exemplos:</p>
+<ul>
+<li>/d: casa com decimains</li>
+<li>/w: casa com alfanuméricos</li>
+<li>/s: casa com espaços</li>
+<li>^: casa com começo de linha</li>
+<li>$: casa com fim de linha</li>
+<li>(<pattern>): agrupa para referencia posterior</li>
+<li>$1: referencia do grupo</li>
+<li></li>
+<li>.: qualquer caracter</li>
+</ul>
+<p>e por aí vai. No geral, é um grep muito mais poderoso com sed embutido.</p>
+    </section>
+</article>
+
+        </main>
+
+        <footer>
+            Site orgulhosamente criado por
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+        </footer>
+    </body>
+</html>

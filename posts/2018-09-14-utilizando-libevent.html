@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Blog - Utilizando libevent</title>
+        <link rel="stylesheet" href="../css/default.css" />
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="../">My Hakyll Blog</a>
+            </div>
+            <nav>
+                <a href="../">Home</a>
+                <a href="../about.html">Sobre</a>
+                <a href="../contact.html">Contato</a>
+                <a href="../archive.html">Arquivo</a>
+            </nav>
+        </header>
+
+        <main role="main">
+            <h1>Utilizando libevent</h1>
+            <article>
+    <section class="header">
+        Postado em Sexta-feira, 14 de setembro de 2018
+        
+    </section>
+    <section class="header">    
+	
+	    Tags: <a href="../tags/tcp-ip.html">tcp-ip</a>, <a href="../tags/c-c%2B%2B.html">c-c++</a>, <a href="../tags/programacao.html">programacao</a>
+	
+    </section>
+    <section>
+        <p>Normalmente, drivers para banco de dados sofrem um problema recorrente: Timeouts por algum tipo de ativo de rede. Não é incomum ver uma query rodando a minutos sem qualquer utilização da rede. Neste cenário, um ativo de rede como um firewall pode cortar a conexão numa forma de proteger o servidor, por exemplo.</p>
+<p>Logo, quando se projeta um driver para utilização na rede, pode ser necessário fazer uma limpeza por conexões mortas por timeouts em certos momentos da execução da aplicação.</p>
+<p>No nível de pacote, a aplicação recebera um pacote RST vindo do firewall. Caso for o read do socket, a aplicação receberá uma mesagem vazia. Caso for o write, a aplicação receberá algum tipo de erro, como um Broken Pipe. No entanto, especificamente um driver cliente para um serviço, várias conexões estarão ociosas e, reativamente, só perceberemos as ruins no momento do write, momento em que o cliente fará uma requisição.</p>
+<p>Vamos supor agora numa configuração dos astros, esse write nunca aconteça. Por uma consequência lógica, as conexões se acumularão até lotar todos os recursos de rede disponíveis, o chamado Connection Leak.</p>
+<p>A libevent permite que você programe o socket para ser notificado dos eventos, por exemplo um READ, antes do WRITE.</p>
+<p>Eu criei um exemplo simples que para mostrar o tempo do timeout para qualquer ip e porta, apenas para degustar a biblioteca. E nesse artigo gostaria de compartilhar. Ainda, não tenho disponível uma área de comentário, peço desculpas pelo inconveniente.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true"></a><span class="dt">int</span> sockfd = socket(p-&gt;ai_family, p-&gt;ai_socktype, p-&gt;ai_protocol);</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true"></a>connect(sockfd, p-&gt;ai_addr, p-&gt;ai_addrlen);</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true"></a>fcntl(sockfd, F_SETFL, fcntl(sockfd, F_GETFL) | O_NONBLOCK);</span></code></pre></div>
+<p>Basicamente, deve-se criar o socket e deixá-lo em modo non-block. Isto é, quando fizer um read, meu código não esperará pelo retorno, em um momento posterior terei que fazer a leitura. Estou resumindo o assunto por sua profundidade, mas eu espero continuar a pesquisa por conta do interesse.</p>
+<p>Em um segundo momento, iniciaremos a libenvent com o comando</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true"></a>event_init();</span></code></pre></div>
+<p>Criaremos um evento base e registraremos um evento para a leitura. Nesse registro, definiremos a função a ser executada ao acontecer o evento</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true"></a><span class="kw">struct</span> event_base *base = event_base_new();</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true"></a><span class="kw">struct</span> event *ev_read;</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true"></a>ev_read = event_new(base, client_sock, EV_READ, on_read, &amp;end_clock);</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true"></a>event_add(ev_read, <span class="dv">0</span>);</span></code></pre></div>
+<p>Acionaremos o loop da libevent</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a>event_base_dispatch(base);</span></code></pre></div>
+<p>Segue a definição da função on_read, que será acionada no momento do evento</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true"></a><span class="dt">void</span> on_read(<span class="dt">int</span> sock, <span class="dt">short</span> ev, <span class="dt">void</span> *arg)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true"></a>{</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true"></a>  assert(ev == EV_READ);</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true"></a>  <span class="dt">char</span> one_byte;</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true"></a>  <span class="cf">if</span> (recv(sock, &amp;one_byte, <span class="dv">1</span>, MSG_PEEK | MSG_DONTWAIT) == <span class="dv">0</span>)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true"></a>    {</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true"></a>	  <span class="co">// alguma logica</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true"></a>      event_loopbreak();</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true"></a>    }</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true"></a>}</span></code></pre></div>
+<p>Importante, o recv está com a flag MSG_PEEK e MSG_DONTWAIT. MSG_PEEK é para consumir um caracter sem retirar do buffer TCP/IP e o MSG_DONTWAIT é para não esperar. Por fim, o event_loopbreak informa para sair do loop da libevent.</p>
+<p>O código de exemplo estará no meu gist do github.</p>
+<p>Por fim, achei a utilização da libevent bem simples. Agora, vou ver mais exemplos onde pode ser aplicado.</p>
+    </section>
+</article>
+
+        </main>
+
+        <footer>
+            Site orgulhosamente criado por
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+        </footer>
+    </body>
+</html>

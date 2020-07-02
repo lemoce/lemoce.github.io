@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>Lemoce Desire: contemplating a new world</title>
+    <link href="https://boteco.mat.br/atom.xml" rel="self" />
+    <link href="https://boteco.mat.br" />
+    <id>https://boteco.mat.br/atom.xml</id>
+    <author>
+        <name>Leandro Cerencio</name>
+        <email>cerencio@yahoo.com.br</email>
+    </author>
+    <updated>2020-02-21T00:00:00Z</updated>
+    <entry>
+    <title>Por que procuramos algo externo se o nosso sofrimento é interno?</title>
+    <link href="https://boteco.mat.br/posts/2020-02-21-pensamentos-de-carnaval.html" />
+    <id>https://boteco.mat.br/posts/2020-02-21-pensamentos-de-carnaval.html</id>
+    <published>2020-02-21T00:00:00Z</published>
+    <updated>2020-02-21T00:00:00Z</updated>
+    <summary type="html"><![CDATA[A felicidade é imutável e nosso sofrimento é mutável]]></summary>
+</entry>
+<entry>
+    <title>Qual a vantagem em perdoar?</title>
+    <link href="https://boteco.mat.br/posts/2019-09-17-qual-a-vantagem-em-perdoar.html" />
+    <id>https://boteco.mat.br/posts/2019-09-17-qual-a-vantagem-em-perdoar.html</id>
+    <published>2019-09-17T00:00:00Z</published>
+    <updated>2019-09-17T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Porque nunca sentimos o perdão em primeira instância]]></summary>
+</entry>
+<entry>
+    <title>Após muita água rolar, mais pensamentos</title>
+    <link href="https://boteco.mat.br/posts/2019-06-07-agua-a-rolar.html" />
+    <id>https://boteco.mat.br/posts/2019-06-07-agua-a-rolar.html</id>
+    <published>2019-06-07T00:00:00Z</published>
+    <updated>2019-06-07T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Será que um dia vibraremos como divindades?]]></summary>
+</entry>
+<entry>
+    <title>Pensamentos sobre a passagem do ano novo</title>
+    <link href="https://boteco.mat.br/posts/2018-12-31-pensamentos-sobre-virada-do-ano.html" />
+    <id>https://boteco.mat.br/posts/2018-12-31-pensamentos-sobre-virada-do-ano.html</id>
+    <published>2018-12-31T00:00:00Z</published>
+    <updated>2018-12-31T00:00:00Z</updated>
+    <summary type="html"><![CDATA[É possível conquistar o mundo em 1 dia?]]></summary>
+</entry>
+<entry>
+    <title>Estudo sobre as sensações</title>
+    <link href="https://boteco.mat.br/posts/2018-12-12-estudo-sensacoes.html" />
+    <id>https://boteco.mat.br/posts/2018-12-12-estudo-sensacoes.html</id>
+    <published>2018-12-12T00:00:00Z</published>
+    <updated>2018-12-12T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Origem das sensações]]></summary>
+</entry>
+<entry>
+    <title>70 livros de filosofia para serem lidos</title>
+    <link href="https://boteco.mat.br/posts/2018-11-21-70-livros-de-filosofia-a-ser-lidos.html" />
+    <id>https://boteco.mat.br/posts/2018-11-21-70-livros-de-filosofia-a-ser-lidos.html</id>
+    <published>2018-11-21T00:00:00Z</published>
+    <updated>2018-11-21T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Leitura recomendada]]></summary>
+</entry>
+<entry>
+    <title>Utilizando o pcre2grep</title>
+    <link href="https://boteco.mat.br/posts/2018-11-12-utilizando-o-pcre2grep.html" />
+    <id>https://boteco.mat.br/posts/2018-11-12-utilizando-o-pcre2grep.html</id>
+    <published>2018-11-12T00:00:00Z</published>
+    <updated>2018-11-12T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Será que volto para o combo grep/sed?]]></summary>
+</entry>
+<entry>
+    <title>Acabou a eleição</title>
+    <link href="https://boteco.mat.br/posts/2018-10-30-acabou-a-eleicao.html" />
+    <id>https://boteco.mat.br/posts/2018-10-30-acabou-a-eleicao.html</id>
+    <published>2018-10-30T00:00:00Z</published>
+    <updated>2018-10-30T00:00:00Z</updated>
+    <summary type="html"><![CDATA[O que sobra depois de um processo doloroso?]]></summary>
+</entry>
+<entry>
+    <title>Entender o coração: Angústia</title>
+    <link href="https://boteco.mat.br/posts/2018-10-26-autoreflexao-sobre-tudo.html" />
+    <id>https://boteco.mat.br/posts/2018-10-26-autoreflexao-sobre-tudo.html</id>
+    <published>2018-10-26T00:00:00Z</published>
+    <updated>2018-10-26T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Como surge a angústia?]]></summary>
+</entry>
+<entry>
+    <title>Telefone sem fio, Fake-news e eleições</title>
+    <link href="https://boteco.mat.br/posts/2018-10-16-eleicoes-e-fake-news.html" />
+    <id>https://boteco.mat.br/posts/2018-10-16-eleicoes-e-fake-news.html</id>
+    <published>2018-10-16T00:00:00Z</published>
+    <updated>2018-10-16T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Será mesmo que transmitir uma notícia faz o outro pensar?]]></summary>
+</entry>
+
+</feed>
