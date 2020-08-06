@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Blog - NixOS - A descoberta de uma grande ideia</title>
+        <link rel="stylesheet" href="../css/default.css" />
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="../">My Hakyll Blog</a>
+            </div>
+            <nav>
+                <a href="../">Home</a>
+                <a href="../about.html">Sobre</a>
+                <a href="../contact.html">Contato</a>
+                <a href="../archive.html">Arquivo</a>
+            </nav>
+        </header>
+
+        <main role="main">
+            <h1>NixOS - A descoberta de uma grande ideia</h1>
+            <article>
+    <section class="header">
+        Postado em Quinta-feira,  6 de agosto de 2020
+        
+    </section>
+    <section class="header">    
+	
+	    Tags: <a href="../tags/computacao.html">computacao</a>, <a href="../tags/linux.html">linux</a>, <a href="../tags/devops.html">devops</a>
+	
+    </section>
+    <section>
+        <p>Essa semana instalei um sistema operacional GNU/Linux chamado NixOS. Que descoberta fantástica. Essa distro linux permite isolar pacotes de dependências, isto é, permite que um binário possa depender de um biblioteca de determinada versão. Isso diminui o problema de DLL Hell. O DLL Hell é quando instalamos uma versão nova de determinada library e esta quebra pacotes já instalados no S.O. . Muito comum em ambiente windows.</p>
+<p>Mais um ponto positivo são os scripts de ativação do shell. Isso permite que um projeto mais restrito com versões de dependências não polua o teu ambiente de produção local. Por exemplo, minha máquina tem versão 3 de um componente XYZ, mas o meu projeto de desenvolvimento utiliza a versão 1. Com o NixOS, é possível abrir um shell onde a versão 1 está ativada ocultando a versão 3, mas não desistalando.</p>
+<p>O que não gostei da distro: a complexidade para instanciar shells. Temos que aprender uma linguagem nova chamada Nix. É o preço que se paga por utilizar algo benéfico.</p>
+<p>Penso em comprar um pendrive para instalar a versão sem blobs propritários chamada Guix. Acho immportante para a liberdade permanecer num ambiente sem a intervenção e interesses de empresas que não cuidam dos assets, como o próprio dado da pessoa.</p>
+    </section>
+</article>
+
+        </main>
+
+        <footer>
+            Site orgulhosamente criado por
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+        </footer>
+    </body>
+</html>

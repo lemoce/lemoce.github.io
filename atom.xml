@@ -8,8 +8,16 @@
         <name>Leandro Cerencio</name>
         <email>cerencio@yahoo.com.br</email>
     </author>
-    <updated>2020-07-07T00:00:00Z</updated>
+    <updated>2020-08-06T00:00:00Z</updated>
     <entry>
+    <title>NixOS - A descoberta de uma grande ideia</title>
+    <link href="https://boteco.mat.br/posts/2020-08-06-NixOS-a-descoberta.html" />
+    <id>https://boteco.mat.br/posts/2020-08-06-NixOS-a-descoberta.html</id>
+    <published>2020-08-06T00:00:00Z</published>
+    <updated>2020-08-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Como isolar pacotes dentro de um mesmo sistema operacional]]></summary>
+</entry>
+<entry>
     <title>Quarentena acabando, muitas incertezas. Mas, sinto algo promissor</title>
     <link href="https://boteco.mat.br/posts/2020-07-07-um-novo-comeco.html" />
     <id>https://boteco.mat.br/posts/2020-07-07-um-novo-comeco.html</id>
@@ -80,14 +88,6 @@
     <published>2018-11-12T00:00:00Z</published>
     <updated>2018-11-12T00:00:00Z</updated>
     <summary type="html"><![CDATA[Será que volto para o combo grep/sed?]]></summary>
-</entry>
-<entry>
-    <title>Acabou a eleição</title>
-    <link href="https://boteco.mat.br/posts/2018-10-30-acabou-a-eleicao.html" />
-    <id>https://boteco.mat.br/posts/2018-10-30-acabou-a-eleicao.html</id>
-    <published>2018-10-30T00:00:00Z</published>
-    <updated>2018-10-30T00:00:00Z</updated>
-    <summary type="html"><![CDATA[O que sobra depois de um processo doloroso?]]></summary>
 </entry>
 
 </feed>
