@@ -8,8 +8,16 @@
         <name>Leandro Cerencio</name>
         <email>cerencio@yahoo.com.br</email>
     </author>
-    <updated>2020-08-06T00:00:00Z</updated>
+    <updated>2020-08-13T00:00:00Z</updated>
     <entry>
+    <title>Haskell - Redescobrindo uma linguagem fantástica</title>
+    <link href="https://boteco.mat.br/posts/2020-08-13-Haskell-a-redescoberta.html" />
+    <id>https://boteco.mat.br/posts/2020-08-13-Haskell-a-redescoberta.html</id>
+    <published>2020-08-13T00:00:00Z</published>
+    <updated>2020-08-13T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Por que eu parei de estudar Haskell?]]></summary>
+</entry>
+<entry>
     <title>NixOS - A descoberta de uma grande ideia</title>
     <link href="https://boteco.mat.br/posts/2020-08-06-NixOS-a-descoberta.html" />
     <id>https://boteco.mat.br/posts/2020-08-06-NixOS-a-descoberta.html</id>
@@ -80,14 +88,6 @@
     <published>2018-11-21T00:00:00Z</published>
     <updated>2018-11-21T00:00:00Z</updated>
     <summary type="html"><![CDATA[Leitura recomendada]]></summary>
-</entry>
-<entry>
-    <title>Utilizando o pcre2grep</title>
-    <link href="https://boteco.mat.br/posts/2018-11-12-utilizando-o-pcre2grep.html" />
-    <id>https://boteco.mat.br/posts/2018-11-12-utilizando-o-pcre2grep.html</id>
-    <published>2018-11-12T00:00:00Z</published>
-    <updated>2018-11-12T00:00:00Z</updated>
-    <summary type="html"><![CDATA[Será que volto para o combo grep/sed?]]></summary>
 </entry>
 
 </feed>

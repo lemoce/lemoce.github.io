@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Blog - Haskell - Redescobrindo uma linguagem fantástica</title>
+        <link rel="stylesheet" href="../css/default.css" />
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="../">My Hakyll Blog</a>
+            </div>
+            <nav>
+                <a href="../">Home</a>
+                <a href="../about.html">Sobre</a>
+                <a href="../contact.html">Contato</a>
+                <a href="../archive.html">Arquivo</a>
+            </nav>
+        </header>
+
+        <main role="main">
+            <h1>Haskell - Redescobrindo uma linguagem fantástica</h1>
+            <article>
+    <section class="header">
+        Postado em Quinta-feira, 13 de agosto de 2020
+        
+    </section>
+    <section class="header">    
+	
+	    Tags: <a href="../tags/computacao.html">computacao</a>, <a href="../tags/haskell.html">haskell</a>, <a href="../tags/functional.html">functional</a>
+	
+    </section>
+    <section>
+        <p>Bom, estou extasiado pelo NixOS. Aprendendo a usar a linguagem nix e o seu modelo de pacotes. Aos poucos, estou mais fluente do mecanismo.</p>
+<p>Ultimamente, tenho estudado muito sobre devops e percebi que necessitava de uma linguagem mais robusta com um grande poder de expressividade. Desse modo, eu redescobri o Haskell. Eu decidi ler o livro <a href="https://www.oreilly.com/library/view/python-for-devops/9781492057680/">Python for Devops</a>, pois o assunto Devops está assumindo um papel recente na minha vida profissional.</p>
+<p>Isso me trouxe um projeto que estava engavetado na minha escrivaninha: um pequeno robo de IA para o Reddit. Basicamente, eu gostaria de usar um robo para verificar imagens no Reddit, com o propósito para verificar a mensagem de usuários. Isso é uma brincadeira para colocar na cabeça das pessoas a importância de checar fatos e não acreditar em tudo.</p>
+<p>Desse modo, segue um pequeno snippet para consumir serviços do reddit:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb1-1" title="1"><span class="ot">{-# LANGUAGE OverloadedStrings #-}</span></a>
+<a class="sourceLine" id="cb1-2" title="2"><span class="kw">import</span> <span class="kw">qualified</span> <span class="dt">Data.ByteString.Lazy.Char8</span> <span class="kw">as</span> <span class="dt">L8</span></a>
+<a class="sourceLine" id="cb1-3" title="3"><span class="kw">import</span>           <span class="dt">Network.HTTP.Client</span></a>
+<a class="sourceLine" id="cb1-4" title="4"><span class="kw">import</span>           <span class="dt">Network.HTTP.Client.TLS</span>    (getGlobalManager)</a>
+<a class="sourceLine" id="cb1-5" title="5"></a>
+<a class="sourceLine" id="cb1-6" title="6">main <span class="fu">=</span> <span class="kw">do</span></a>
+<a class="sourceLine" id="cb1-7" title="7">    manager <span class="ot">&lt;-</span> getGlobalManager</a>
+<a class="sourceLine" id="cb1-8" title="8">    initReq <span class="ot">&lt;-</span> <span class="fu">fmap</span> (urlEncodedBody [ (<span class="st">&quot;grant_type&quot;</span>, <span class="st">&quot;password&quot;</span>)</a>
+<a class="sourceLine" id="cb1-9" title="9">                                    , (<span class="st">&quot;username&quot;</span>, <span class="st">&quot;user&quot;</span>)</a>
+<a class="sourceLine" id="cb1-10" title="10">                                    , (<span class="st">&quot;password&quot;</span>, <span class="st">&quot;passpass&quot;</span>)</a>
+<a class="sourceLine" id="cb1-11" title="11">                                    ]</a>
+<a class="sourceLine" id="cb1-12" title="12">                    )</a>
+<a class="sourceLine" id="cb1-13" title="13">               <span class="fu">$</span> <span class="fu">fmap</span> (applyBasicAuth <span class="st">&quot;appid&quot;</span> <span class="st">&quot;tokenid&quot;</span>)</a>
+<a class="sourceLine" id="cb1-14" title="14">               <span class="fu">$</span> parseRequest <span class="st">&quot;https://www.reddit.com/api/v1/access_token&quot;</span></a>
+<a class="sourceLine" id="cb1-15" title="15"></a>
+<a class="sourceLine" id="cb1-16" title="16">    <span class="fu">putStrLn</span> <span class="fu">$</span> <span class="fu">show</span> initReq</a>
+<a class="sourceLine" id="cb1-17" title="17">    myResp <span class="ot">&lt;-</span> httpLbs initReq manager</a>
+<a class="sourceLine" id="cb1-18" title="18">    <span class="fu">putStrLn</span> <span class="fu">$</span> <span class="fu">show</span> <span class="fu">$</span> myResp</a></code></pre></div>
+<p>Esse snippet permite que loguemos ao reddit e seja retornado um token de autenticação. De posse do token, podemos acessar algumas apis para que o robo possa interagir com o usuários.</p>
+<p>Realmente, porque eu parei de estudar uma linguagem fantástica e muito expressiva.</p>
+    </section>
+</article>
+
+        </main>
+
+        <footer>
+            Site orgulhosamente criado por
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+        </footer>
+    </body>
+</html>
