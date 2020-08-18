@@ -8,8 +8,16 @@
         <name>Leandro Cerencio</name>
         <email>cerencio@yahoo.com.br</email>
     </author>
-    <updated>2020-08-14T00:00:00Z</updated>
+    <updated>2020-08-17T00:00:00Z</updated>
     <entry>
+    <title>Avanços nos estudos do Git</title>
+    <link href="https://boteco.mat.br/posts/2020-08-17-avancos-nos-estudos-de-git.html" />
+    <id>https://boteco.mat.br/posts/2020-08-17-avancos-nos-estudos-de-git.html</id>
+    <published>2020-08-17T00:00:00Z</published>
+    <updated>2020-08-17T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Caminhar sempre, nunca retroceder, nunca parar]]></summary>
+</entry>
+<entry>
     <title>NixOS - Configurando o Emacs com um script nix</title>
     <link href="https://boteco.mat.br/posts/2020-08-14-NixOS-arquivo-de-configuracao-do-emacs.html" />
     <id>https://boteco.mat.br/posts/2020-08-14-NixOS-arquivo-de-configuracao-do-emacs.html</id>
@@ -80,14 +88,6 @@
     <published>2018-12-31T00:00:00Z</published>
     <updated>2018-12-31T00:00:00Z</updated>
     <summary type="html"><![CDATA[É possível conquistar o mundo em 1 dia?]]></summary>
-</entry>
-<entry>
-    <title>Estudo sobre as sensações</title>
-    <link href="https://boteco.mat.br/posts/2018-12-12-estudo-sensacoes.html" />
-    <id>https://boteco.mat.br/posts/2018-12-12-estudo-sensacoes.html</id>
-    <published>2018-12-12T00:00:00Z</published>
-    <updated>2018-12-12T00:00:00Z</updated>
-    <summary type="html"><![CDATA[Origem das sensações]]></summary>
 </entry>
 
 </feed>
