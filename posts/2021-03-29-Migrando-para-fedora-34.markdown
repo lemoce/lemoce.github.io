@@ -39,6 +39,7 @@ No final de cada *Section* do *nvidia.conf*, acrescentar a linha ```Option "Prim
 
 Após, eu decidi criar dois script: um para habilitar e outro para desabilitar. 
 Arquivo /usr/sbin/change_to_nvidia.sh
+
 ```
 #!/usr/bin/env bash
 
@@ -46,6 +47,7 @@ sed -i -E 's/^(\s+)(# )(Option.*Primary.*)$/\1\3/' /etc/X11/xorg.conf.d/nvidia.c
 ```
 
 Arquivo /usr/sbin/change_to_intel.sh
+
 ```
 #!/usr/bin/env bash
 
@@ -58,24 +60,25 @@ Agora tem um passo que é *cpu_governor*. Esse pode ficar em *powersave* ou *per
 é bom para tarefas que demanda mais processamento. Para fazer isso, foi criado mais dois scripts para
 modificar esse parâmetro:
 Arquivo /usr/sbin/change_to_powersave.sh
-´´´
+
+```
 #!/usr/bin/env bash
 
 for cpu in `ls /sys/devices/system/cpu | egrep "cpu[[:digit:]]+"`
 do
     echo powersave > /sys/devices/system/cpu/$cpu/cpufreq/scaling_governor
 done
-´´´
+```
 
 Arquivo /usr/sbin/change_to_performance.sh
-´´´
+```
 #!/usr/bin/env bash
 
 for cpu in `ls /sys/devices/system/cpu | egrep "cpu[[:digit:]]+"`
 do
     echo performance > /sys/devices/system/cpu/$cpu/cpufreq/scaling_governor
 done
-´´´
+```
 
 Parte final, é a configuração do bluetooth do meu aparelho de som. Eu tenho um [Yamaha MCR-B142](https://uk.yamaha.com/files/download/other_assets/6/328816/MCR-B142_om_AB-1.pdf).
 Nesse modelo, a especificação fala que é aceito 2 codecs SBC ou AAC. Apesar que default o Fedora já está
@@ -109,12 +112,12 @@ Mar 29 11:39:19 fedora.lemoce.org systemd[4951]: pipewire.service: Consumed 12.4
 
 No arquivo */etc/pipewire/media-session.d/bluez-monitor.conf*, tem um comentário muito interessante:
 
-´´´
+```
     # Enabled headset roles (default: [ hsp_hs hfp_ag ]), this
     # property only applies to native backend. Currently some headsets
     # (Sony WH-1000XM3) are not working with both hsp_ag and hfp_ag
     # enabled, disable either hsp_ag or hfp_ag to work around it.
-´´´
+```
 
 Quer dizer que tem casos onde eu devo escolher uma das duas opções, ao invés da default. O arquivo ficou
 assim:
