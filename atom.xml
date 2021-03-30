@@ -8,8 +8,16 @@
         <name>Leandro Cerencio</name>
         <email>cerencio@yahoo.com.br</email>
     </author>
-    <updated>2020-09-04T00:00:00Z</updated>
+    <updated>2021-03-29T00:00:00Z</updated>
     <entry>
+    <title>Dicas para migrar do Ubuntu para o Fedora 34</title>
+    <link href="https://boteco.mat.br/posts/2021-03-29-Migrando-para-fedora-34.html" />
+    <id>https://boteco.mat.br/posts/2021-03-29-Migrando-para-fedora-34.html</id>
+    <published>2021-03-29T00:00:00Z</published>
+    <updated>2021-03-29T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Fedora: é como se fosse o retorno a casa antiga]]></summary>
+</entry>
+<entry>
     <title>Avanços nos estudos do Git (2)</title>
     <link href="https://boteco.mat.br/posts/2020-09-04-importancia-de-se-aprender-git.html" />
     <id>https://boteco.mat.br/posts/2020-09-04-importancia-de-se-aprender-git.html</id>
@@ -80,14 +88,6 @@
     <published>2020-02-21T00:00:00Z</published>
     <updated>2020-02-21T00:00:00Z</updated>
     <summary type="html"><![CDATA[A felicidade é imutável e nosso sofrimento é mutável]]></summary>
-</entry>
-<entry>
-    <title>Qual a vantagem em perdoar?</title>
-    <link href="https://boteco.mat.br/posts/2019-09-17-qual-a-vantagem-em-perdoar.html" />
-    <id>https://boteco.mat.br/posts/2019-09-17-qual-a-vantagem-em-perdoar.html</id>
-    <published>2019-09-17T00:00:00Z</published>
-    <updated>2019-09-17T00:00:00Z</updated>
-    <summary type="html"><![CDATA[Porque nunca sentimos o perdão em primeira instância]]></summary>
 </entry>
 
 </feed>

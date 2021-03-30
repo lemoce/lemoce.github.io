@@ -29,7 +29,7 @@
     </section>
     <section class="header">    
 	
-	    Tags: <a href="../tags/computacao.html">computacao</a>, <a href="../tags/haskell.html">haskell</a>, <a href="../tags/functional.html">functional</a>
+	    Tags: <a title="All pages tagged 'computacao'." href="../tags/computacao.html">computacao</a>, <a title="All pages tagged 'haskell'." href="../tags/haskell.html">haskell</a>, <a title="All pages tagged 'functional'." href="../tags/functional.html">functional</a>
 	
     </section>
     <section>
@@ -37,24 +37,24 @@
 <p>Ultimamente, tenho estudado muito sobre devops e percebi que necessitava de uma linguagem mais robusta com um grande poder de expressividade. Desse modo, eu redescobri o Haskell. Eu decidi ler o livro <a href="https://www.oreilly.com/library/view/python-for-devops/9781492057680/">Python for Devops</a>, pois o assunto Devops está assumindo um papel recente na minha vida profissional.</p>
 <p>Isso me trouxe um projeto que estava engavetado na minha escrivaninha: um pequeno robo de IA para o Reddit. Basicamente, eu gostaria de usar um robo para verificar imagens no Reddit, com o propósito para verificar a mensagem de usuários. Isso é uma brincadeira para colocar na cabeça das pessoas a importância de checar fatos e não acreditar em tudo.</p>
 <p>Desse modo, segue um pequeno snippet para consumir serviços do reddit:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><a class="sourceLine" id="cb1-1" title="1"><span class="ot">{-# LANGUAGE OverloadedStrings #-}</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="kw">import</span> <span class="kw">qualified</span> <span class="dt">Data.ByteString.Lazy.Char8</span> <span class="kw">as</span> <span class="dt">L8</span></a>
-<a class="sourceLine" id="cb1-3" title="3"><span class="kw">import</span>           <span class="dt">Network.HTTP.Client</span></a>
-<a class="sourceLine" id="cb1-4" title="4"><span class="kw">import</span>           <span class="dt">Network.HTTP.Client.TLS</span>    (getGlobalManager)</a>
-<a class="sourceLine" id="cb1-5" title="5"></a>
-<a class="sourceLine" id="cb1-6" title="6">main <span class="fu">=</span> <span class="kw">do</span></a>
-<a class="sourceLine" id="cb1-7" title="7">    manager <span class="ot">&lt;-</span> getGlobalManager</a>
-<a class="sourceLine" id="cb1-8" title="8">    initReq <span class="ot">&lt;-</span> <span class="fu">fmap</span> (urlEncodedBody [ (<span class="st">&quot;grant_type&quot;</span>, <span class="st">&quot;password&quot;</span>)</a>
-<a class="sourceLine" id="cb1-9" title="9">                                    , (<span class="st">&quot;username&quot;</span>, <span class="st">&quot;user&quot;</span>)</a>
-<a class="sourceLine" id="cb1-10" title="10">                                    , (<span class="st">&quot;password&quot;</span>, <span class="st">&quot;passpass&quot;</span>)</a>
-<a class="sourceLine" id="cb1-11" title="11">                                    ]</a>
-<a class="sourceLine" id="cb1-12" title="12">                    )</a>
-<a class="sourceLine" id="cb1-13" title="13">               <span class="fu">$</span> <span class="fu">fmap</span> (applyBasicAuth <span class="st">&quot;appid&quot;</span> <span class="st">&quot;tokenid&quot;</span>)</a>
-<a class="sourceLine" id="cb1-14" title="14">               <span class="fu">$</span> parseRequest <span class="st">&quot;https://www.reddit.com/api/v1/access_token&quot;</span></a>
-<a class="sourceLine" id="cb1-15" title="15"></a>
-<a class="sourceLine" id="cb1-16" title="16">    <span class="fu">putStrLn</span> <span class="fu">$</span> <span class="fu">show</span> initReq</a>
-<a class="sourceLine" id="cb1-17" title="17">    myResp <span class="ot">&lt;-</span> httpLbs initReq manager</a>
-<a class="sourceLine" id="cb1-18" title="18">    <span class="fu">putStrLn</span> <span class="fu">$</span> <span class="fu">show</span> <span class="fu">$</span> myResp</a></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ot">{-# LANGUAGE OverloadedStrings #-}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="kw">qualified</span> <span class="dt">Data.ByteString.Lazy.Char8</span> <span class="kw">as</span> <span class="dt">L8</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span>           <span class="dt">Network.HTTP.Client</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span>           <span class="dt">Network.HTTP.Client.TLS</span>    (getGlobalManager)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>main <span class="ot">=</span> <span class="kw">do</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    manager <span class="ot">&lt;-</span> getGlobalManager</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    initReq <span class="ot">&lt;-</span> <span class="fu">fmap</span> (urlEncodedBody [ (<span class="st">&quot;grant_type&quot;</span>, <span class="st">&quot;password&quot;</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>                                    , (<span class="st">&quot;username&quot;</span>, <span class="st">&quot;user&quot;</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>                                    , (<span class="st">&quot;password&quot;</span>, <span class="st">&quot;passpass&quot;</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>                                    ]</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>                    )</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>               <span class="op">$</span> <span class="fu">fmap</span> (applyBasicAuth <span class="st">&quot;appid&quot;</span> <span class="st">&quot;tokenid&quot;</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>               <span class="op">$</span> parseRequest <span class="st">&quot;https://www.reddit.com/api/v1/access_token&quot;</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">putStrLn</span> <span class="op">$</span> <span class="fu">show</span> initReq</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    myResp <span class="ot">&lt;-</span> httpLbs initReq manager</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">putStrLn</span> <span class="op">$</span> <span class="fu">show</span> <span class="op">$</span> myResp</span></code></pre></div>
 <p>Esse snippet permite que loguemos ao reddit e seja retornado um token de autenticação. De posse do token, podemos acessar algumas apis para que o robo possa interagir com o usuários.</p>
 <p>Realmente, porque eu parei de estudar uma linguagem fantástica e muito expressiva.</p>
     </section>
