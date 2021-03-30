@@ -50,10 +50,20 @@ sed -i -E 's/^(\s+)(# )(Option.*Primary.*)$/\1\3/' /etc/X11/xorg.conf.d/nvidia.c
 
 sed -i -E 's/^(\s+)(Option.*Primary.*)$/\1# \2/' /etc/X11/xorg.conf.d/nvidia.conf</code></pre>
 <p>Conceda as permissões de execução, pronto.</p>
-<p>Agora tem um passo que é <em>cpu_governor</em>. Esse pode ficar em <em>powersave</em> ou <em>performance</em>. O modo <em>performace</em> é bom para tarefas que demanda mais processamento. Para fazer isso, foi criado mais dois scripts para modificar esse parâmetro: Arquivo /usr/sbin/change_to_powersave.sh ´´´ #!/usr/bin/env bash</p>
-<p>for cpu in <code>ls /sys/devices/system/cpu | egrep "cpu[[:digit:]]+"</code> do echo powersave &gt; /sys/devices/system/cpu/$cpu/cpufreq/scaling_governor done ´´´</p>
-<p>Arquivo /usr/sbin/change_to_performance.sh ´´´ #!/usr/bin/env bash</p>
-<p>for cpu in <code>ls /sys/devices/system/cpu | egrep "cpu[[:digit:]]+"</code> do echo performance &gt; /sys/devices/system/cpu/$cpu/cpufreq/scaling_governor done ´´´</p>
+<p>Agora tem um passo que é <em>cpu_governor</em>. Esse pode ficar em <em>powersave</em> ou <em>performance</em>. O modo <em>performace</em> é bom para tarefas que demanda mais processamento. Para fazer isso, foi criado mais dois scripts para modificar esse parâmetro: Arquivo /usr/sbin/change_to_powersave.sh</p>
+<pre><code>#!/usr/bin/env bash
+
+for cpu in `ls /sys/devices/system/cpu | egrep &quot;cpu[[:digit:]]+&quot;`
+do
+    echo powersave &gt; /sys/devices/system/cpu/$cpu/cpufreq/scaling_governor
+done</code></pre>
+<p>Arquivo /usr/sbin/change_to_performance.sh</p>
+<pre><code>#!/usr/bin/env bash
+
+for cpu in `ls /sys/devices/system/cpu | egrep &quot;cpu[[:digit:]]+&quot;`
+do
+    echo performance &gt; /sys/devices/system/cpu/$cpu/cpufreq/scaling_governor
+done</code></pre>
 <p>Parte final, é a configuração do bluetooth do meu aparelho de som. Eu tenho um <a href="https://uk.yamaha.com/files/download/other_assets/6/328816/MCR-B142_om_AB-1.pdf">Yamaha MCR-B142</a>. Nesse modelo, a especificação fala que é aceito 2 codecs SBC ou AAC. Apesar que default o Fedora já está configurado para isso, eu não obtive som com uma mensagem muito estranha da console:</p>
 <pre><code># journalctl --user -u pipewire
 Mar 29 11:03:26 fedora.lemoce.org systemd[4951]: Started Multimedia Service.
@@ -79,7 +89,10 @@ Mar 29 11:39:19 fedora.lemoce.org systemd[4951]: pipewire.service: Deactivated s
 Mar 29 11:39:19 fedora.lemoce.org systemd[4951]: Stopped Multimedia Service.
 Mar 29 11:39:19 fedora.lemoce.org systemd[4951]: pipewire.service: Consumed 12.429s CPU time.</code></pre>
 <p>No arquivo <em>/etc/pipewire/media-session.d/bluez-monitor.conf</em>, tem um comentário muito interessante:</p>
-<p>´´´ # Enabled headset roles (default: [ hsp_hs hfp_ag ]), this # property only applies to native backend. Currently some headsets # (Sony WH-1000XM3) are not working with both hsp_ag and hfp_ag # enabled, disable either hsp_ag or hfp_ag to work around it. ´´´</p>
+<pre><code>    # Enabled headset roles (default: [ hsp_hs hfp_ag ]), this
+    # property only applies to native backend. Currently some headsets
+    # (Sony WH-1000XM3) are not working with both hsp_ag and hfp_ag
+    # enabled, disable either hsp_ag or hfp_ag to work around it.</code></pre>
 <p>Quer dizer que tem casos onde eu devo escolher uma das duas opções, ao invés da default. O arquivo ficou assim:</p>
 <pre><code>properties = {
     #bluez5.sbc-xq-support = true
