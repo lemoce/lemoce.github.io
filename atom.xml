@@ -8,8 +8,24 @@
         <name>Leandro Cerencio</name>
         <email>cerencio@yahoo.com.br</email>
     </author>
-    <updated>2021-03-29T00:00:00Z</updated>
+    <updated>2022-04-24T00:00:00Z</updated>
     <entry>
+    <title>Primeiro post de 2022 e mudando um pouco as coisas</title>
+    <link href="https://boteco.mat.br/posts/2022-04-24-Mudando-um-pouco-as-coisas.html" />
+    <id>https://boteco.mat.br/posts/2022-04-24-Mudando-um-pouco-as-coisas.html</id>
+    <published>2022-04-24T00:00:00Z</published>
+    <updated>2022-04-24T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Tentando mudar os comportamentos]]></summary>
+</entry>
+<entry>
+    <title>2022-04-24-Mudando-um-pouco-as-coisas</title>
+    <link href="https://boteco.mat.br/posts/2022-04-24-Mudando-um-pouco-as-coisas.html" />
+    <id>https://boteco.mat.br/posts/2022-04-24-Mudando-um-pouco-as-coisas.html</id>
+    <published>2022-04-24T00:00:00Z</published>
+    <updated>2022-04-24T00:00:00Z</updated>
+    <summary type="html"><![CDATA[This is post description]]></summary>
+</entry>
+<entry>
     <title>Dicas para migrar do Ubuntu para o Fedora 34</title>
     <link href="https://boteco.mat.br/posts/2021-03-29-Migrando-para-fedora-34.html" />
     <id>https://boteco.mat.br/posts/2021-03-29-Migrando-para-fedora-34.html</id>
@@ -72,22 +88,6 @@
     <published>2020-07-07T00:00:00Z</published>
     <updated>2020-07-07T00:00:00Z</updated>
     <summary type="html"><![CDATA[Muito difícil olhar para dentro e ver coisas desagradáveis]]></summary>
-</entry>
-<entry>
-    <title>70 livros de filosofia para serem lidos - Atualizados</title>
-    <link href="https://boteco.mat.br/posts/2020-07-02-70-livros-de-filosofia-a-ser-lidos.html" />
-    <id>https://boteco.mat.br/posts/2020-07-02-70-livros-de-filosofia-a-ser-lidos.html</id>
-    <published>2020-07-02T00:00:00Z</published>
-    <updated>2020-07-02T00:00:00Z</updated>
-    <summary type="html"><![CDATA[Leitura recomendada]]></summary>
-</entry>
-<entry>
-    <title>Por que procuramos algo externo se o nosso sofrimento é interno?</title>
-    <link href="https://boteco.mat.br/posts/2020-02-21-pensamentos-de-carnaval.html" />
-    <id>https://boteco.mat.br/posts/2020-02-21-pensamentos-de-carnaval.html</id>
-    <published>2020-02-21T00:00:00Z</published>
-    <updated>2020-02-21T00:00:00Z</updated>
-    <summary type="html"><![CDATA[A felicidade é imutável e nosso sofrimento é mutável]]></summary>
 </entry>
 
 </feed>
