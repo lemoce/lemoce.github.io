@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <title>Lemoce Desire: contemplating a new world</title>
-    <link href="https://boteco.mat.br/atom.xml" rel="self" />
-    <link href="https://boteco.mat.br" />
-    <id>https://boteco.mat.br/atom.xml</id>
+    <link href="https://lemoce.github.io/atom.xml" rel="self" />
+    <link href="https://lemoce.github.io" />
+    <id>https://lemoce.github.io/atom.xml</id>
     <author>
         <name>Leandro Cerencio</name>
         <email>cerencio@yahoo.com.br</email>
@@ -11,83 +11,83 @@
     <updated>2022-04-24T00:00:00Z</updated>
     <entry>
     <title>Primeiro post de 2022 e mudando um pouco as coisas</title>
-    <link href="https://boteco.mat.br/posts/2022-04-24-Mudando-um-pouco-as-coisas.html" />
-    <id>https://boteco.mat.br/posts/2022-04-24-Mudando-um-pouco-as-coisas.html</id>
+    <link href="https://lemoce.github.io/posts/2022-04-24-Mudando-um-pouco-as-coisas.html" />
+    <id>https://lemoce.github.io/posts/2022-04-24-Mudando-um-pouco-as-coisas.html</id>
     <published>2022-04-24T00:00:00Z</published>
     <updated>2022-04-24T00:00:00Z</updated>
     <summary type="html"><![CDATA[Tentando mudar os comportamentos]]></summary>
 </entry>
 <entry>
-    <title>2022-04-24-Mudando-um-pouco-as-coisas</title>
-    <link href="https://boteco.mat.br/posts/2022-04-24-Mudando-um-pouco-as-coisas.html" />
-    <id>https://boteco.mat.br/posts/2022-04-24-Mudando-um-pouco-as-coisas.html</id>
-    <published>2022-04-24T00:00:00Z</published>
-    <updated>2022-04-24T00:00:00Z</updated>
-    <summary type="html"><![CDATA[This is post description]]></summary>
-</entry>
-<entry>
     <title>Dicas para migrar do Ubuntu para o Fedora 34</title>
-    <link href="https://boteco.mat.br/posts/2021-03-29-Migrando-para-fedora-34.html" />
-    <id>https://boteco.mat.br/posts/2021-03-29-Migrando-para-fedora-34.html</id>
+    <link href="https://lemoce.github.io/posts/2021-03-29-Migrando-para-fedora-34.html" />
+    <id>https://lemoce.github.io/posts/2021-03-29-Migrando-para-fedora-34.html</id>
     <published>2021-03-29T00:00:00Z</published>
     <updated>2021-03-29T00:00:00Z</updated>
     <summary type="html"><![CDATA[Fedora: é como se fosse o retorno a casa antiga]]></summary>
 </entry>
 <entry>
     <title>Avanços nos estudos do Git (2)</title>
-    <link href="https://boteco.mat.br/posts/2020-09-04-importancia-de-se-aprender-git.html" />
-    <id>https://boteco.mat.br/posts/2020-09-04-importancia-de-se-aprender-git.html</id>
+    <link href="https://lemoce.github.io/posts/2020-09-04-importancia-de-se-aprender-git.html" />
+    <id>https://lemoce.github.io/posts/2020-09-04-importancia-de-se-aprender-git.html</id>
     <published>2020-09-04T00:00:00Z</published>
     <updated>2020-09-04T00:00:00Z</updated>
     <summary type="html"><![CDATA[Caminhar sempre, nunca retroceder, nunca parar]]></summary>
 </entry>
 <entry>
     <title>Como combater a ofensa</title>
-    <link href="https://boteco.mat.br/posts/2020-08-24-videos-sobre-ofender.html" />
-    <id>https://boteco.mat.br/posts/2020-08-24-videos-sobre-ofender.html</id>
+    <link href="https://lemoce.github.io/posts/2020-08-24-videos-sobre-ofender.html" />
+    <id>https://lemoce.github.io/posts/2020-08-24-videos-sobre-ofender.html</id>
     <published>2020-08-24T00:00:00Z</published>
     <updated>2020-08-24T00:00:00Z</updated>
     <summary type="html"><![CDATA[Fortalecimento do espírito]]></summary>
 </entry>
 <entry>
     <title>Avanços nos estudos do Git</title>
-    <link href="https://boteco.mat.br/posts/2020-08-17-avancos-nos-estudos-de-git.html" />
-    <id>https://boteco.mat.br/posts/2020-08-17-avancos-nos-estudos-de-git.html</id>
+    <link href="https://lemoce.github.io/posts/2020-08-17-avancos-nos-estudos-de-git.html" />
+    <id>https://lemoce.github.io/posts/2020-08-17-avancos-nos-estudos-de-git.html</id>
     <published>2020-08-17T00:00:00Z</published>
     <updated>2020-08-17T00:00:00Z</updated>
     <summary type="html"><![CDATA[Caminhar sempre, nunca retroceder, nunca parar]]></summary>
 </entry>
 <entry>
     <title>NixOS - Configurando o Emacs com um script nix</title>
-    <link href="https://boteco.mat.br/posts/2020-08-14-NixOS-arquivo-de-configuracao-do-emacs.html" />
-    <id>https://boteco.mat.br/posts/2020-08-14-NixOS-arquivo-de-configuracao-do-emacs.html</id>
+    <link href="https://lemoce.github.io/posts/2020-08-14-NixOS-arquivo-de-configuracao-do-emacs.html" />
+    <id>https://lemoce.github.io/posts/2020-08-14-NixOS-arquivo-de-configuracao-do-emacs.html</id>
     <published>2020-08-14T00:00:00Z</published>
     <updated>2020-08-14T00:00:00Z</updated>
     <summary type="html"><![CDATA[Cada vez me surpreendo mais]]></summary>
 </entry>
 <entry>
     <title>Haskell - Redescobrindo uma linguagem fantástica</title>
-    <link href="https://boteco.mat.br/posts/2020-08-13-Haskell-a-redescoberta.html" />
-    <id>https://boteco.mat.br/posts/2020-08-13-Haskell-a-redescoberta.html</id>
+    <link href="https://lemoce.github.io/posts/2020-08-13-Haskell-a-redescoberta.html" />
+    <id>https://lemoce.github.io/posts/2020-08-13-Haskell-a-redescoberta.html</id>
     <published>2020-08-13T00:00:00Z</published>
     <updated>2020-08-13T00:00:00Z</updated>
     <summary type="html"><![CDATA[Por que eu parei de estudar Haskell?]]></summary>
 </entry>
 <entry>
     <title>NixOS - A descoberta de uma grande ideia</title>
-    <link href="https://boteco.mat.br/posts/2020-08-06-NixOS-a-descoberta.html" />
-    <id>https://boteco.mat.br/posts/2020-08-06-NixOS-a-descoberta.html</id>
+    <link href="https://lemoce.github.io/posts/2020-08-06-NixOS-a-descoberta.html" />
+    <id>https://lemoce.github.io/posts/2020-08-06-NixOS-a-descoberta.html</id>
     <published>2020-08-06T00:00:00Z</published>
     <updated>2020-08-06T00:00:00Z</updated>
     <summary type="html"><![CDATA[Como isolar pacotes dentro de um mesmo sistema operacional]]></summary>
 </entry>
 <entry>
     <title>Quarentena acabando, muitas incertezas. Mas, sinto algo promissor</title>
-    <link href="https://boteco.mat.br/posts/2020-07-07-um-novo-comeco.html" />
-    <id>https://boteco.mat.br/posts/2020-07-07-um-novo-comeco.html</id>
+    <link href="https://lemoce.github.io/posts/2020-07-07-um-novo-comeco.html" />
+    <id>https://lemoce.github.io/posts/2020-07-07-um-novo-comeco.html</id>
     <published>2020-07-07T00:00:00Z</published>
     <updated>2020-07-07T00:00:00Z</updated>
     <summary type="html"><![CDATA[Muito difícil olhar para dentro e ver coisas desagradáveis]]></summary>
+</entry>
+<entry>
+    <title>70 livros de filosofia para serem lidos - Atualizados</title>
+    <link href="https://lemoce.github.io/posts/2020-07-02-70-livros-de-filosofia-a-ser-lidos.html" />
+    <id>https://lemoce.github.io/posts/2020-07-02-70-livros-de-filosofia-a-ser-lidos.html</id>
+    <published>2020-07-02T00:00:00Z</published>
+    <updated>2020-07-02T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Leitura recomendada]]></summary>
 </entry>
 
 </feed>
