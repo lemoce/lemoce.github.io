@@ -1,7 +1,7 @@
 ---
 title: 'Primeiro post de 2022 e mudando um pouco as coisas'
 description: 'Tentando mudar os comportamentos'
-tags: futuro, pensamento, introspecção, semanal
+tags: futuro, pensamento, introspeccao, semanal
 ---
 
 Por quase 1 ano, fiquei sem postar, não que seja uma coisa ruim, mas eu preciso colocar no papel
