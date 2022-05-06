@@ -8,8 +8,16 @@
         <name>Leandro Cerencio</name>
         <email>cerencio@yahoo.com.br</email>
     </author>
-    <updated>2022-04-26T00:00:00Z</updated>
+    <updated>2022-05-06T00:00:00Z</updated>
     <entry>
+    <title>Dilemas do mundo moderno - Desenvolvedores</title>
+    <link href="https://lemoce.github.io/posts/2022-05-06-dilemas-do-mundo-moderno.html" />
+    <id>https://lemoce.github.io/posts/2022-05-06-dilemas-do-mundo-moderno.html</id>
+    <published>2022-05-06T00:00:00Z</published>
+    <updated>2022-05-06T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Aversão a modernidade]]></summary>
+</entry>
+<entry>
     <title>Pontos para mudar - crescendo a força interior</title>
     <link href="https://lemoce.github.io/posts/2022-04-26-pontos-a-mudar.html" />
     <id>https://lemoce.github.io/posts/2022-04-26-pontos-a-mudar.html</id>
@@ -80,14 +88,6 @@
     <published>2020-08-13T00:00:00Z</published>
     <updated>2020-08-13T00:00:00Z</updated>
     <summary type="html"><![CDATA[Por que eu parei de estudar Haskell?]]></summary>
-</entry>
-<entry>
-    <title>NixOS - A descoberta de uma grande ideia</title>
-    <link href="https://lemoce.github.io/posts/2020-08-06-NixOS-a-descoberta.html" />
-    <id>https://lemoce.github.io/posts/2020-08-06-NixOS-a-descoberta.html</id>
-    <published>2020-08-06T00:00:00Z</published>
-    <updated>2020-08-06T00:00:00Z</updated>
-    <summary type="html"><![CDATA[Como isolar pacotes dentro de um mesmo sistema operacional]]></summary>
 </entry>
 
 </feed>
