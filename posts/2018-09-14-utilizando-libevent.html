@@ -29,23 +29,44 @@
     </section>
     <section class="header">    
 	
-	    Tags: <a title="All pages tagged 'tcp-ip'." href="../tags/tcp-ip.html">tcp-ip</a>, <a title="All pages tagged 'c-c++'." href="../tags/c-c%2B%2B.html">c-c++</a>, <a title="All pages tagged 'programacao'." href="../tags/programacao.html">programacao</a>
+	    Tags: <a title="All pages tagged 'tcp-ip'." href="../tags/tcp-ip.html" rel="tag">tcp-ip</a>, <a title="All pages tagged 'c-c++'." href="../tags/c-c%2B%2B.html" rel="tag">c-c++</a>, <a title="All pages tagged 'programacao'." href="../tags/programacao.html" rel="tag">programacao</a>
 	
     </section>
     <section>
-        <p>Normalmente, drivers para banco de dados sofrem um problema recorrente: Timeouts por algum tipo de ativo de rede. Não é incomum ver uma query rodando a minutos sem qualquer utilização da rede. Neste cenário, um ativo de rede como um firewall pode cortar a conexão numa forma de proteger o servidor, por exemplo.</p>
-<p>Logo, quando se projeta um driver para utilização na rede, pode ser necessário fazer uma limpeza por conexões mortas por timeouts em certos momentos da execução da aplicação.</p>
-<p>No nível de pacote, a aplicação recebera um pacote RST vindo do firewall. Caso for o read do socket, a aplicação receberá uma mesagem vazia. Caso for o write, a aplicação receberá algum tipo de erro, como um Broken Pipe. No entanto, especificamente um driver cliente para um serviço, várias conexões estarão ociosas e, reativamente, só perceberemos as ruins no momento do write, momento em que o cliente fará uma requisição.</p>
-<p>Vamos supor agora numa configuração dos astros, esse write nunca aconteça. Por uma consequência lógica, as conexões se acumularão até lotar todos os recursos de rede disponíveis, o chamado Connection Leak.</p>
-<p>A libevent permite que você programe o socket para ser notificado dos eventos, por exemplo um READ, antes do WRITE.</p>
-<p>Eu criei um exemplo simples que para mostrar o tempo do timeout para qualquer ip e porta, apenas para degustar a biblioteca. E nesse artigo gostaria de compartilhar. Ainda, não tenho disponível uma área de comentário, peço desculpas pelo inconveniente.</p>
+        <p>Normalmente, drivers para banco de dados sofrem um problema recorrente:
+Timeouts por algum tipo de ativo de rede. Não é incomum ver uma query
+rodando a minutos sem qualquer utilização da rede. Neste cenário, um
+ativo de rede como um firewall pode cortar a conexão numa forma de
+proteger o servidor, por exemplo.</p>
+<p>Logo, quando se projeta um driver para utilização na rede, pode ser
+necessário fazer uma limpeza por conexões mortas por timeouts em certos
+momentos da execução da aplicação.</p>
+<p>No nível de pacote, a aplicação recebera um pacote RST vindo do firewall.
+Caso for o read do socket, a aplicação receberá uma mesagem vazia. Caso
+for o write, a aplicação receberá algum tipo de erro, como um Broken Pipe.
+No entanto, especificamente um driver cliente para um serviço, várias
+conexões estarão ociosas e, reativamente, só perceberemos as ruins no
+momento do write, momento em que o cliente fará uma requisição.</p>
+<p>Vamos supor agora numa configuração dos astros, esse write nunca aconteça.
+Por uma consequência lógica, as conexões se acumularão até lotar todos
+os recursos de rede disponíveis, o chamado Connection Leak.</p>
+<p>A libevent permite que você programe o socket para ser notificado dos
+eventos, por exemplo um READ, antes do WRITE.</p>
+<p>Eu criei um exemplo simples que para mostrar o tempo do timeout para
+qualquer ip e porta, apenas para degustar a biblioteca. E nesse artigo
+gostaria de compartilhar. Ainda, não tenho disponível uma área de
+comentário, peço desculpas pelo inconveniente.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> sockfd <span class="op">=</span> socket<span class="op">(</span>p<span class="op">-&gt;</span>ai_family<span class="op">,</span> p<span class="op">-&gt;</span>ai_socktype<span class="op">,</span> p<span class="op">-&gt;</span>ai_protocol<span class="op">);</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>connect<span class="op">(</span>sockfd<span class="op">,</span> p<span class="op">-&gt;</span>ai_addr<span class="op">,</span> p<span class="op">-&gt;</span>ai_addrlen<span class="op">);</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>fcntl<span class="op">(</span>sockfd<span class="op">,</span> F_SETFL<span class="op">,</span> fcntl<span class="op">(</span>sockfd<span class="op">,</span> F_GETFL<span class="op">)</span> <span class="op">|</span> O_NONBLOCK<span class="op">);</span></span></code></pre></div>
-<p>Basicamente, deve-se criar o socket e deixá-lo em modo non-block. Isto é, quando fizer um read, meu código não esperará pelo retorno, em um momento posterior terei que fazer a leitura. Estou resumindo o assunto por sua profundidade, mas eu espero continuar a pesquisa por conta do interesse.</p>
+<p>Basicamente, deve-se criar o socket e deixá-lo em modo non-block. Isto é,
+quando fizer um read, meu código não esperará pelo retorno, em um momento
+posterior terei que fazer a leitura. Estou resumindo o assunto por sua
+profundidade, mas eu espero continuar a pesquisa por conta do interesse.</p>
 <p>Em um segundo momento, iniciaremos a libenvent com o comando</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>event_init<span class="op">();</span></span></code></pre></div>
-<p>Criaremos um evento base e registraremos um evento para a leitura. Nesse registro, definiremos a função a ser executada ao acontecer o evento</p>
+<p>Criaremos um evento base e registraremos um evento para a leitura. Nesse
+registro, definiremos a função a ser executada ao acontecer o evento</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> event_base <span class="op">*</span>base <span class="op">=</span> event_base_new<span class="op">();</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">struct</span> event <span class="op">*</span>ev_read<span class="op">;</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>ev_read <span class="op">=</span> event_new<span class="op">(</span>base<span class="op">,</span> client_sock<span class="op">,</span> EV_READ<span class="op">,</span> on_read<span class="op">,</span> <span class="op">&amp;</span>end_clock<span class="op">);</span></span>
@@ -65,9 +86,12 @@
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>      event_loopbreak<span class="op">();</span></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="op">}</span></span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>Importante, o recv está com a flag MSG_PEEK e MSG_DONTWAIT. MSG_PEEK é para consumir um caracter sem retirar do buffer TCP/IP e o MSG_DONTWAIT é para não esperar. Por fim, o event_loopbreak informa para sair do loop da libevent.</p>
+<p>Importante, o recv está com a flag MSG_PEEK e MSG_DONTWAIT. MSG_PEEK é para
+consumir um caracter sem retirar do buffer TCP/IP e o MSG_DONTWAIT é para
+não esperar. Por fim, o event_loopbreak informa para sair do loop da libevent.</p>
 <p>O código de exemplo estará no meu gist do github.</p>
-<p>Por fim, achei a utilização da libevent bem simples. Agora, vou ver mais exemplos onde pode ser aplicado.</p>
+<p>Por fim, achei a utilização da libevent bem simples. Agora, vou ver mais
+exemplos onde pode ser aplicado.</p>
     </section>
 </article>
 

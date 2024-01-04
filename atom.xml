@@ -6,10 +6,20 @@
     <id>https://lemoce.github.io/atom.xml</id>
     <author>
         <name>Leandro Cerencio</name>
+        
         <email>cerencio@yahoo.com.br</email>
+        
     </author>
-    <updated>2022-05-06T00:00:00Z</updated>
+    <updated>2024-01-04T00:00:00Z</updated>
     <entry>
+    <title>2024 - Se preparando para mudar internamente</title>
+    <link href="https://lemoce.github.io/posts/2024-01-04-como-mudar-internamente.html" />
+    <id>https://lemoce.github.io/posts/2024-01-04-como-mudar-internamente.html</id>
+    <published>2024-01-04T00:00:00Z</published>
+    <updated>2024-01-04T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Como olhar para dentro e não se envergonhar]]></summary>
+</entry>
+<entry>
     <title>Dilemas do mundo moderno - Desenvolvedores</title>
     <link href="https://lemoce.github.io/posts/2022-05-06-dilemas-do-mundo-moderno.html" />
     <id>https://lemoce.github.io/posts/2022-05-06-dilemas-do-mundo-moderno.html</id>
@@ -80,14 +90,6 @@
     <published>2020-08-14T00:00:00Z</published>
     <updated>2020-08-14T00:00:00Z</updated>
     <summary type="html"><![CDATA[Cada vez me surpreendo mais]]></summary>
-</entry>
-<entry>
-    <title>Haskell - Redescobrindo uma linguagem fantástica</title>
-    <link href="https://lemoce.github.io/posts/2020-08-13-Haskell-a-redescoberta.html" />
-    <id>https://lemoce.github.io/posts/2020-08-13-Haskell-a-redescoberta.html</id>
-    <published>2020-08-13T00:00:00Z</published>
-    <updated>2020-08-13T00:00:00Z</updated>
-    <summary type="html"><![CDATA[Por que eu parei de estudar Haskell?]]></summary>
 </entry>
 
 </feed>

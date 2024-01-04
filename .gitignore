@@ -4,3 +4,4 @@ _site/
 dist-*/
 cabal*
 stack.yaml*
+*.markdown

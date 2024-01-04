@@ -29,13 +29,20 @@
     </section>
     <section class="header">    
 	
-	    Tags: <a title="All pages tagged 'computacao'." href="../tags/computacao.html">computacao</a>, <a title="All pages tagged 'haskell'." href="../tags/haskell.html">haskell</a>, <a title="All pages tagged 'functional'." href="../tags/functional.html">functional</a>
+	    Tags: <a title="All pages tagged 'computacao'." href="../tags/computacao.html" rel="tag">computacao</a>, <a title="All pages tagged 'haskell'." href="../tags/haskell.html" rel="tag">haskell</a>, <a title="All pages tagged 'functional'." href="../tags/functional.html" rel="tag">functional</a>
 	
     </section>
     <section>
-        <p>Bom, estou extasiado pelo NixOS. Aprendendo a usar a linguagem nix e o seu modelo de pacotes. Aos poucos, estou mais fluente do mecanismo.</p>
-<p>Ultimamente, tenho estudado muito sobre devops e percebi que necessitava de uma linguagem mais robusta com um grande poder de expressividade. Desse modo, eu redescobri o Haskell. Eu decidi ler o livro <a href="https://www.oreilly.com/library/view/python-for-devops/9781492057680/">Python for Devops</a>, pois o assunto Devops está assumindo um papel recente na minha vida profissional.</p>
-<p>Isso me trouxe um projeto que estava engavetado na minha escrivaninha: um pequeno robo de IA para o Reddit. Basicamente, eu gostaria de usar um robo para verificar imagens no Reddit, com o propósito para verificar a mensagem de usuários. Isso é uma brincadeira para colocar na cabeça das pessoas a importância de checar fatos e não acreditar em tudo.</p>
+        <p>Bom, estou extasiado pelo NixOS. Aprendendo a usar a linguagem nix e o seu modelo de pacotes.
+Aos poucos, estou mais fluente do mecanismo.</p>
+<p>Ultimamente, tenho estudado muito sobre devops e percebi que necessitava de uma linguagem mais
+robusta com um grande poder de expressividade. Desse modo, eu redescobri o Haskell. Eu decidi
+ler o livro <a href="https://www.oreilly.com/library/view/python-for-devops/9781492057680/">Python for Devops</a>,
+pois o assunto Devops está assumindo um papel recente na minha vida profissional.</p>
+<p>Isso me trouxe um projeto que estava engavetado na minha escrivaninha: um pequeno robo de IA
+para o Reddit. Basicamente, eu gostaria de usar um robo para verificar imagens no Reddit, com
+o propósito para verificar a mensagem de usuários. Isso é uma brincadeira para colocar na
+cabeça das pessoas a importância de checar fatos e não acreditar em tudo.</p>
 <p>Desse modo, segue um pequeno snippet para consumir serviços do reddit:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode haskell"><code class="sourceCode haskell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ot">{-# LANGUAGE OverloadedStrings #-}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> <span class="kw">qualified</span> <span class="dt">Data.ByteString.Lazy.Char8</span> <span class="kw">as</span> <span class="dt">L8</span></span>
@@ -55,7 +62,8 @@
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">putStrLn</span> <span class="op">$</span> <span class="fu">show</span> initReq</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    myResp <span class="ot">&lt;-</span> httpLbs initReq manager</span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    <span class="fu">putStrLn</span> <span class="op">$</span> <span class="fu">show</span> <span class="op">$</span> myResp</span></code></pre></div>
-<p>Esse snippet permite que loguemos ao reddit e seja retornado um token de autenticação. De posse do token, podemos acessar algumas apis para que o robo possa interagir com o usuários.</p>
+<p>Esse snippet permite que loguemos ao reddit e seja retornado um token de autenticação. De
+posse do token, podemos acessar algumas apis para que o robo possa interagir com o usuários.</p>
 <p>Realmente, porque eu parei de estudar uma linguagem fantástica e muito expressiva.</p>
     </section>
 </article>

@@ -29,19 +29,34 @@
     </section>
     <section class="header">    
 	
-	    Tags: <a title="All pages tagged 'linux'." href="../tags/linux.html">linux</a>, <a title="All pages tagged 'fedora'." href="../tags/fedora.html">fedora</a>, <a title="All pages tagged 'instalacao'." href="../tags/instalacao.html">instalacao</a>, <a title="All pages tagged 'bluetooth'." href="../tags/bluetooth.html">bluetooth</a>, <a title="All pages tagged 'a2dp'." href="../tags/a2dp.html">a2dp</a>
+	    Tags: <a title="All pages tagged 'linux'." href="../tags/linux.html" rel="tag">linux</a>, <a title="All pages tagged 'fedora'." href="../tags/fedora.html" rel="tag">fedora</a>, <a title="All pages tagged 'instalacao'." href="../tags/instalacao.html" rel="tag">instalacao</a>, <a title="All pages tagged 'bluetooth'." href="../tags/bluetooth.html" rel="tag">bluetooth</a>, <a title="All pages tagged 'a2dp'." href="../tags/a2dp.html" rel="tag">a2dp</a>
 	
     </section>
     <section>
-        <p>Essa semana foi marcada por um video do Diolinux com o título “<a href="https://www.youtube.com/watch?v=IOEACWRrEnk">Testei o Fedora Linux por uma semana, veja o que eu achei.</a>”. Basicamente, ele elogiou o Fedora 33 com os seus defeitos e suas características. Eu sou um usuário antigo de Fedora e Red Hat, que precisei mudar quando minha empresa decidiu ir para os Debian <em>flavors</em> como Ubuntu. A última versão Ubuntu que usei foi o <a href="https://ubuntustudio.org/">Ubuntu Studio</a>. É muito fácil configurar o Ubuntu com os aplicativos da minha empresa, mas um <em>glitch</em> no login minou a minha experiencia com o Ubuntu.</p>
-<p>Assim, na semana passada, eu decidi instalar o Fedora 33 no GPD Pocket. A instalação aconteceu sem problemas e usei um pouco. Certo, então dá para instalar na minha máquina principal: um <strong>Lenovo Legion Y530</strong>. Não houve nenhuma supresa. A única coisa mandatória é o blacklist do módulo <em>ideapad_laptop</em>. Mas, isso é para todas as distribuições Linux, caso contrário, temos problemas com o Wifi e Bluetooth. Aproveitei e mudei o pulseaudio para o <a href="https://pipewire.org/">pipewire</a>. Funcionou. Por último, eu apontei os reposirórios para 34 Beta. Atualizei sem nenhum problema posterior.</p>
-<p>Nesse instante, eu clonei a partição do Ubuntu, baixei a iso do Fedora 34 Beta e instalei na partição principal sobrescrevendo o Ubuntu Studio. A instalação ocorreu sem problema algum, nesse ponto, eu recomendo uma atualização do Linux, a versão Beta tem a tendência para lançar muitos pacotes antes do <em>final release</em>. No aplicativo <em>Software</em>, eu apontei os repositórios da Nvidia e da Steam e executei os seguintes comandos (<a href="https://docs.fedoraproject.org/en-US/quick-docs/how-to-set-nvidia-as-primary-gpu-on-optimus-based-laptops/">tutorial</a>):</p>
+        <p>Essa semana foi marcada por um video do Diolinux com o título “<a href="https://www.youtube.com/watch?v=IOEACWRrEnk">Testei o Fedora Linux por uma semana, veja o que eu achei.</a>”.
+Basicamente, ele elogiou o Fedora 33 com os seus defeitos e suas características. Eu sou um usuário
+antigo de Fedora e Red Hat, que precisei mudar quando minha empresa decidiu ir para os Debian <em>flavors</em>
+como Ubuntu. A última versão Ubuntu que usei foi o <a href="https://ubuntustudio.org/">Ubuntu Studio</a>. É muito fácil
+configurar o Ubuntu com os aplicativos da minha empresa, mas um <em>glitch</em> no login minou a minha experiencia com
+o Ubuntu.</p>
+<p>Assim, na semana passada, eu decidi instalar o Fedora 33 no GPD Pocket. A instalação aconteceu sem problemas e
+usei um pouco. Certo, então dá para instalar na minha máquina principal: um <strong>Lenovo Legion Y530</strong>. Não houve
+nenhuma supresa. A única coisa mandatória é o blacklist do módulo <em>ideapad_laptop</em>. Mas, isso é para todas as
+distribuições Linux, caso contrário, temos problemas com o Wifi e Bluetooth. Aproveitei e mudei o pulseaudio
+para o <a href="https://pipewire.org/">pipewire</a>. Funcionou. Por último, eu apontei os reposirórios para 34 Beta.
+Atualizei sem nenhum problema posterior.</p>
+<p>Nesse instante, eu clonei a partição do Ubuntu, baixei a iso do Fedora 34 Beta e instalei na partição principal
+sobrescrevendo o Ubuntu Studio. A instalação ocorreu sem problema algum, nesse ponto, eu recomendo uma atualização
+do Linux, a versão Beta tem a tendência para lançar muitos pacotes antes do <em>final release</em>. No aplicativo
+<em>Software</em>, eu apontei os repositórios da Nvidia e da Steam e executei os seguintes comandos (<a href="https://docs.fedoraproject.org/en-US/quick-docs/how-to-set-nvidia-as-primary-gpu-on-optimus-based-laptops/">tutorial</a>):</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dnf update <span class="at">--refresh</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> dnf install gcc kernel-headers kernel-devel akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs xorg-x11-drv-nvidia-libs.i686</span></code></pre></div>
-<p>Aqui, basicamente, é feito um restart. Tem uma configuração para habilitar a placa da Nvidia como primária. Segui essa configuração:</p>
+<p>Aqui, basicamente, é feito um restart. Tem uma configuração para habilitar a placa da Nvidia como primária.
+Segui essa configuração:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> cp <span class="at">-p</span> /usr/share/X11/xorg.conf.d/nvidia.conf /etc/X11/xorg.conf.d/nvidia.conf</span></code></pre></div>
 <p>No final de cada <em>Section</em> do <em>nvidia.conf</em>, acrescentar a linha <code>Option "PrimaryGPU" "yes"</code>.</p>
-<p>Após, eu decidi criar dois script: um para habilitar e outro para desabilitar. Arquivo /usr/sbin/change_to_nvidia.sh</p>
+<p>Após, eu decidi criar dois script: um para habilitar e outro para desabilitar.
+Arquivo /usr/sbin/change_to_nvidia.sh</p>
 <pre><code>#!/usr/bin/env bash
 
 sed -i -E 's/^(\s+)(# )(Option.*Primary.*)$/\1\3/' /etc/X11/xorg.conf.d/nvidia.conf</code></pre>
@@ -50,7 +65,10 @@ sed -i -E 's/^(\s+)(# )(Option.*Primary.*)$/\1\3/' /etc/X11/xorg.conf.d/nvidia.c
 
 sed -i -E 's/^(\s+)(Option.*Primary.*)$/\1# \2/' /etc/X11/xorg.conf.d/nvidia.conf</code></pre>
 <p>Conceda as permissões de execução, pronto.</p>
-<p>Agora tem um passo que é <em>cpu_governor</em>. Esse pode ficar em <em>powersave</em> ou <em>performance</em>. O modo <em>performace</em> é bom para tarefas que demanda mais processamento. Para fazer isso, foi criado mais dois scripts para modificar esse parâmetro: Arquivo /usr/sbin/change_to_powersave.sh</p>
+<p>Agora tem um passo que é <em>cpu_governor</em>. Esse pode ficar em <em>powersave</em> ou <em>performance</em>. O modo <em>performace</em>
+é bom para tarefas que demanda mais processamento. Para fazer isso, foi criado mais dois scripts para
+modificar esse parâmetro:
+Arquivo /usr/sbin/change_to_powersave.sh</p>
 <pre><code>#!/usr/bin/env bash
 
 for cpu in `ls /sys/devices/system/cpu | egrep &quot;cpu[[:digit:]]+&quot;`
@@ -64,7 +82,9 @@ for cpu in `ls /sys/devices/system/cpu | egrep &quot;cpu[[:digit:]]+&quot;`
 do
     echo performance &gt; /sys/devices/system/cpu/$cpu/cpufreq/scaling_governor
 done</code></pre>
-<p>Parte final, é a configuração do bluetooth do meu aparelho de som. Eu tenho um <a href="https://uk.yamaha.com/files/download/other_assets/6/328816/MCR-B142_om_AB-1.pdf">Yamaha MCR-B142</a>. Nesse modelo, a especificação fala que é aceito 2 codecs SBC ou AAC. Apesar que default o Fedora já está configurado para isso, eu não obtive som com uma mensagem muito estranha da console:</p>
+<p>Parte final, é a configuração do bluetooth do meu aparelho de som. Eu tenho um <a href="https://uk.yamaha.com/files/download/other_assets/6/328816/MCR-B142_om_AB-1.pdf">Yamaha MCR-B142</a>.
+Nesse modelo, a especificação fala que é aceito 2 codecs SBC ou AAC. Apesar que default o Fedora já está
+configurado para isso, eu não obtive som com uma mensagem muito estranha da console:</p>
 <pre><code># journalctl --user -u pipewire
 Mar 29 11:03:26 fedora.lemoce.org systemd[4951]: Started Multimedia Service.
 Mar 29 11:03:27 fedora.lemoce.org pipewire-media-session[5639]: oFono: Registering Profile /Profile/ofono failed
@@ -93,7 +113,8 @@ Mar 29 11:39:19 fedora.lemoce.org systemd[4951]: pipewire.service: Consumed 12.4
     # property only applies to native backend. Currently some headsets
     # (Sony WH-1000XM3) are not working with both hsp_ag and hfp_ag
     # enabled, disable either hsp_ag or hfp_ag to work around it.</code></pre>
-<p>Quer dizer que tem casos onde eu devo escolher uma das duas opções, ao invés da default. O arquivo ficou assim:</p>
+<p>Quer dizer que tem casos onde eu devo escolher uma das duas opções, ao invés da default. O arquivo ficou
+assim:</p>
 <pre><code>properties = {
     #bluez5.sbc-xq-support = true
 
@@ -112,7 +133,8 @@ Mar 29 11:39:19 fedora.lemoce.org systemd[4951]: pipewire.service: Consumed 12.4
     # Enabled A2DP codecs (default: all).
     bluez5.codecs = [ sbc ]
 }</code></pre>
-<p>Eu decidi restringir o <em>codecs</em> e o <em>headset-roles</em>. E <em>voi lá</em>, tenho som bluetooth via pipewire. No próximo, eu vou mostrar como configurar o Safenet eToken e como utilizar o eToken com os repositórios git.</p>
+<p>Eu decidi restringir o <em>codecs</em> e o <em>headset-roles</em>. E <em>voi lá</em>, tenho som bluetooth via pipewire. No próximo,
+eu vou mostrar como configurar o Safenet eToken e como utilizar o eToken com os repositórios git.</p>
     </section>
 </article>
 

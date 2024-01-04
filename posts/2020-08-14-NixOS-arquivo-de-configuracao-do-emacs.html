@@ -29,23 +29,28 @@
     </section>
     <section class="header">    
 	
-	    Tags: <a title="All pages tagged 'emacs'." href="../tags/emacs.html">emacs</a>, <a title="All pages tagged 'nixos'." href="../tags/nixos.html">nixos</a>, <a title="All pages tagged 'functional'." href="../tags/functional.html">functional</a>
+	    Tags: <a title="All pages tagged 'emacs'." href="../tags/emacs.html" rel="tag">emacs</a>, <a title="All pages tagged 'nixos'." href="../tags/nixos.html" rel="tag">nixos</a>, <a title="All pages tagged 'functional'." href="../tags/functional.html" rel="tag">functional</a>
 	
     </section>
     <section>
-        <p>Seguindo as boas práticas do NixOS, eu nâo configurei de bate pronto o meu emacs. No manual e em alguns posts, a recomendação é configurar tudo com um script para que o sistema mantenha o seu aspecto puro, isto é, sem efeitos colaterais.</p>
-<p>Eu atingi esse ponto, criando um arquivo chamado <code>/.config/nixpkgs/config.nix</code>. Nesse arquivo, é gerado um arquivo numa store. Desse modo, não afeta a pasta do usuário e não compromente o estado do OS. Para criar um ambiente novo, é só transportar esse arquivo e a mágica acontecerá novamente.</p>
+        <p>Seguindo as boas práticas do NixOS, eu nâo configurei de bate pronto o meu emacs.
+No manual e em alguns posts, a recomendação é configurar tudo com um script para
+que o sistema mantenha o seu aspecto puro, isto é, sem efeitos colaterais.</p>
+<p>Eu atingi esse ponto, criando um arquivo chamado <code>/.config/nixpkgs/config.nix</code>.
+Nesse arquivo, é gerado um arquivo numa store. Desse modo, não afeta a pasta do
+usuário e não compromente o estado do OS. Para criar um ambiente novo, é só
+transportar esse arquivo e a mágica acontecerá novamente.</p>
 <p>Segue o snippet do arquivo</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode nix"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">{</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode nix"><code class="sourceCode nix"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">allowUnfree</span> = true<span class="kw">;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="va">allowUnfree</span> <span class="op">=</span> <span class="cn">true</span><span class="op">;</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="ex">packageOverrides</span> = pkgs: with pkgs<span class="kw">;</span> <span class="ex">rec</span> {</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="va">packageOverrides</span> <span class="op">=</span> <span class="va">pkgs</span><span class="op">:</span> <span class="kw">with</span> pkgs<span class="op">;</span> <span class="kw">rec</span> <span class="op">{</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="ex">myEmacsConfig</span> = writeText <span class="st">&quot;default.el&quot;</span> <span class="st">''</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">;;</span> <span class="ex">initialize</span> package</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="va">myEmacsConfig</span> <span class="op">=</span> writeText <span class="st">&quot;default.el&quot;</span> <span class="st">''</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">;; initialize package</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">require</span> <span class="st">'package)</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="st">(require 'package)</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="st">(package-initialize)</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
@@ -53,58 +58,61 @@
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="st"> ;; custom-set-variables was added by Custom.</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="st"> ;; If you edit it by hand, you could mess it up, so be careful.</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="st"> ;; Your init file should contain only one such instance.</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="st"> ;; If there is more than one, they won'</span>t work right.</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a> <span class="st">'(backup-directory-alist (quote ((&quot;&quot; . &quot;/tmp&quot;))))</span></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="st"> '</span><span class="kw">(</span><span class="ex">column-number-mode</span> t<span class="kw">)</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a> <span class="st">'(package-selected-packages (quote (monokai-theme haskell-mode))))</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="st"> ;; If there is more than one, they won't work right.</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="st"> '(backup-directory-alist (quote ((&quot;&quot; . &quot;/tmp&quot;))))</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="st"> '(column-number-mode t)</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="st"> '(package-selected-packages (quote (monokai-theme haskell-mode))))</span></span>
 <span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="st">(custom-set-faces</span></span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="st"> ;; custom-set-faces was added by Custom.</span></span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="st"> ;; If you edit it by hand, you could mess it up, so be careful.</span></span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="st"> ;; Your init file should contain only one such instance.</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="st"> ;; If there is more than one, they won'</span><span class="ex">t</span> work right.</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a> <span class="kw">)</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="st"> ;; If there is more than one, they won't work right.</span></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="st"> )</span></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">setq-default</span> indent-tabs-mode nil<span class="kw">)</span></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">setq-default</span> truncate-lines t<span class="kw">)</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">load-theme</span> <span class="st">'monokai t)</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="st">(setq-default indent-tabs-mode nil)</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="st">(setq-default truncate-lines t)</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="st">(load-theme 'monokai t)</span></span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="st">(toggle-frame-maximized)</span></span>
 <span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="st">(custom-set-variables '</span><span class="er">(</span><span class="ex">haskell-stylish-on-save</span> t<span class="kw">))</span></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">add-hook</span> <span class="st">'haskell-mode-hook '</span>turn-on-haskell-doc-mode<span class="kw">)</span></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">add-hook</span> <span class="st">'haskell-mode-hook '</span>turn-on-haskell-indentation<span class="kw">)</span></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="kw">(</span><span class="ex">add-to-list</span> <span class="st">'completion-ignored-extensions &quot;.hi&quot;)</span></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a><span class="st">(custom-set-variables '(haskell-stylish-on-save t))</span></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="st">(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a><span class="st">(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)</span></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="st">(add-to-list 'completion-ignored-extensions &quot;.hi&quot;)</span></span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="st"> '';</span></span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="st">    </span></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a><span class="st">  steam = pkgs.steam.override {</span></span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="st">    withJava = true;</span></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="st">  };</span></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a><span class="st"> ''</span><span class="op">;</span></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>  <span class="va">steam</span> <span class="op">=</span> pkgs.steam.override <span class="op">{</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>    <span class="va">withJava</span> <span class="op">=</span> <span class="cn">true</span><span class="op">;</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>  <span class="op">};</span></span>
 <span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="st">  myDesktop = pkgs.buildEnv {</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a><span class="st">    name = &quot;my-desktop&quot;;</span></span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="st">    paths = [</span></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="st">      ; # pacotes para o usuário</span></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a><span class="st">    ];</span></span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a><span class="st">  };</span></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>  <span class="va">myDesktop</span> <span class="op">=</span> pkgs.buildEnv <span class="op">{</span></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>    <span class="va">name</span> <span class="op">=</span> <span class="st">&quot;my-desktop&quot;</span><span class="op">;</span></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>    <span class="va">paths</span> <span class="op">=</span> <span class="op">[</span></span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>      ; <span class="co"># pacotes para o usuário</span></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>    <span class="op">];</span></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>  <span class="op">};</span></span>
 <span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a><span class="st">  myEmacs = emacsWithPackages (epkgs: (with epkgs.melpaStablePackages; [ </span></span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="st">      (runCommand &quot;default.el&quot; {} ''</span></span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>  <span class="va">myEmacs</span> <span class="op">=</span> emacsWithPackages <span class="op">(</span><span class="va">epkgs</span><span class="op">:</span> <span class="op">(</span><span class="kw">with</span> epkgs.melpaStablePackages<span class="op">;</span> <span class="op">[</span> </span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>      <span class="op">(</span>runCommand <span class="st">&quot;default.el&quot;</span> <span class="op">{}</span> <span class="st">''</span></span>
 <span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a><span class="st">mkdir -p $out/share/emacs/site-lisp</span></span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="st">cp ${myEmacsConfig} $out/share/emacs/site-lisp/default.el</span></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="st">'')</span></span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="st">      magit          # ; Integrate git &lt;C-x g&gt;</span></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="st">      haskell-mode</span></span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="st">      use-package</span></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="st">    ]) ++ (with epkgs.melpaPackages; [</span></span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="st">      markdown-mode</span></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="st">      w3m</span></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="st">      ztree</span></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a><span class="st">    ]));</span></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="st">cp </span><span class="sc">${</span>myEmacsConfig<span class="sc">}</span><span class="st"> $out/share/emacs/site-lisp/default.el</span></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="st">''</span><span class="op">)</span></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>      magit          <span class="co"># ; Integrate git &lt;C-x g&gt;</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>      haskell-mode</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>      use-package</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>    <span class="op">])</span> <span class="op">++</span> <span class="op">(</span><span class="kw">with</span> epkgs.melpaPackages<span class="op">;</span> <span class="op">[</span></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>      markdown-mode</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>      w3m</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>      ztree</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>    <span class="op">]));</span></span>
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a><span class="st">  };</span></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="st">}</span></span></code></pre></div>
-<p>Esse arquivo será gravado em dentro da store do emacs e a configuração será apenas vista para o usuário.</p>
-<p>Realmente, se eu fosse um sysop que mantivesse um Linux para uma corporação, eu escolheria o NixOS para ser o meu sistema principal sem medo de ser feliz. Para servidores, eu não pensaria duas vezes.</p>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  <span class="op">};</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>Esse arquivo será gravado em dentro da store do emacs e a configuração será
+apenas vista para o usuário.</p>
+<p>Realmente, se eu fosse um sysop que mantivesse um Linux para uma corporação,
+eu escolheria o NixOS para ser o meu sistema principal sem medo de ser feliz.
+Para servidores, eu não pensaria duas vezes.</p>
     </section>
 </article>
 
