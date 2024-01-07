@@ -5,3 +5,4 @@ dist-*/
 cabal*
 stack.yaml*
 *.markdown
+*~

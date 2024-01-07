@@ -10,8 +10,16 @@
         <email>cerencio@yahoo.com.br</email>
         
     </author>
-    <updated>2024-01-04T00:00:00Z</updated>
+    <updated>2024-01-07T00:00:00Z</updated>
     <entry>
+    <title>Processo para correr uma maratona</title>
+    <link href="https://lemoce.github.io/posts/2024-01-07-processo-maratona.html" />
+    <id>https://lemoce.github.io/posts/2024-01-07-processo-maratona.html</id>
+    <published>2024-01-07T00:00:00Z</published>
+    <updated>2024-01-07T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Maratona dá para terminar?]]></summary>
+</entry>
+<entry>
     <title>2024 - Se preparando para mudar internamente</title>
     <link href="https://lemoce.github.io/posts/2024-01-04-como-mudar-internamente.html" />
     <id>https://lemoce.github.io/posts/2024-01-04-como-mudar-internamente.html</id>
@@ -82,14 +90,6 @@
     <published>2020-08-17T00:00:00Z</published>
     <updated>2020-08-17T00:00:00Z</updated>
     <summary type="html"><![CDATA[Caminhar sempre, nunca retroceder, nunca parar]]></summary>
-</entry>
-<entry>
-    <title>NixOS - Configurando o Emacs com um script nix</title>
-    <link href="https://lemoce.github.io/posts/2020-08-14-NixOS-arquivo-de-configuracao-do-emacs.html" />
-    <id>https://lemoce.github.io/posts/2020-08-14-NixOS-arquivo-de-configuracao-do-emacs.html</id>
-    <published>2020-08-14T00:00:00Z</published>
-    <updated>2020-08-14T00:00:00Z</updated>
-    <summary type="html"><![CDATA[Cada vez me surpreendo mais]]></summary>
 </entry>
 
 </feed>
