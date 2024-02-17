@@ -1,7 +1,7 @@
 ---
 title: 'A quaresma começou'
 description: 'Vícios primeiro passo para expurgá-los?'
-tags: mudanca, quaresma, vícios, foco, arduino, raspberry pi
+tags: mudanca, quaresma, vicios, foco, arduino, raspberry pi
 ---
 
 /
@@ -23,7 +23,8 @@ gigantesco para rever. Vou listar abaixo algumas coisas na cabeça:
 - comprar um sensor GPS e o visor redondo para construir um relogio GPS;
 - montar um radio para entender como funciona;
 - fazer um sensor para armazenar temperatura e decibeis;
-- por ai vai;
+- fazer uma interface de midi;
+- fazer um relogio, algo para usar o 7seg display.
 
 Eu quero do fundo do meu coração não disperdiçar o tempo com coisa inútil como
 games online. É infantil, e já não estou mais com essa disposição. Escutei
