@@ -10,8 +10,16 @@
         <email>cerencio@yahoo.com.br</email>
         
     </author>
-    <updated>2024-02-17T00:00:00Z</updated>
+    <updated>2024-02-18T00:00:00Z</updated>
     <entry>
+    <title>Comportamentos para mudar aos domingos</title>
+    <link href="https://lemoce.github.io/posts/2024-02-18-comportamento-aos-domingos.html" />
+    <id>https://lemoce.github.io/posts/2024-02-18-comportamento-aos-domingos.html</id>
+    <published>2024-02-18T00:00:00Z</published>
+    <updated>2024-02-18T00:00:00Z</updated>
+    <summary type="html"><![CDATA[Hoje é o dia para curtir, por quê resiste a isto?]]></summary>
+</entry>
+<entry>
     <title>A satisfação em consertar coisas</title>
     <link href="https://lemoce.github.io/posts/2024-02-17-satisfacao-em-consertar-coisas.html" />
     <id>https://lemoce.github.io/posts/2024-02-17-satisfacao-em-consertar-coisas.html</id>
@@ -82,14 +90,6 @@
     <published>2022-04-24T00:00:00Z</published>
     <updated>2022-04-24T00:00:00Z</updated>
     <summary type="html"><![CDATA[Tentando mudar os comportamentos]]></summary>
-</entry>
-<entry>
-    <title>Dicas para migrar do Ubuntu para o Fedora 34</title>
-    <link href="https://lemoce.github.io/posts/2021-03-29-Migrando-para-fedora-34.html" />
-    <id>https://lemoce.github.io/posts/2021-03-29-Migrando-para-fedora-34.html</id>
-    <published>2021-03-29T00:00:00Z</published>
-    <updated>2021-03-29T00:00:00Z</updated>
-    <summary type="html"><![CDATA[Fedora: é como se fosse o retorno a casa antiga]]></summary>
 </entry>
 
 </feed>
