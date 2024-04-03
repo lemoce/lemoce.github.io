@@ -1,22 +1,31 @@
 ---
-title: 'Será que achei um propósito na vida? Começando uma nova jornada.'
-description: 'As dificuldades de uma mente viciada na inérica. Fora das responsabilidades.'
-tags: mudanca, recomeco, jornada, licenciatura
+title: 'Nós somos falhos, e quer saber: está tudo bem.'
+description: 'Como se levantar? Ter a humildade de reconhecer e fazer o certo.'
+tags: mudanca, quaresma, vicios, falhas, postura
 ---
 
-/
+///////-
 
-Bom, eu descobri que a UNIVESP realizará um vestibular agora. Foi de verdade um
-golpe de sorte. Eu adoraria cursar licenciatura. E juntou com um curso que pode
-ser muito bom para mim. Eu realmente quero fazer a diferença a partir de agora.
-Ser um grande parceiro. Ser um grande colega de trabalho. Tentar fazer sentido
-mesmo que as pessoas não valorizem o trabalho ou sejam sarcásticas (mesmo que
-bem intencionadas).
+Então, eu falhei em cumprir uma promessa de quaresma. No final, fiquei
+assistindo a Capcom Cup, coisa que não importa para mim. Advinha, eram uma
+hora da manhã, acordado, vendo gente jogando, que realmente não importa.
+Poderia ter levantado e assistido as lutas sem a perda de tempo.
 
-Agora, eu vou olhar a literatura e vou começar a estudar um pouco de português,
-biologia, história e geográfia. Vou tentar ler alguns livros da FUVEST para
-lembrar dos padrões e começar a desbloquear coisas muito antigas na minha
-memória.
+Vamos fazer a conta. As lutas começaram as 5 da tarde. Fiquei até as 10 da
+noite para ver 1 luta que na minha opinião pouco importava. Era um Brasileiro
+contra um Japonês com um personagem que nem jogo. Com um streamer que tbm não
+importa. Como fiquei pagando essas coisas por 2 anos?
 
-Nâo sei o que irá acontecer a partir de agora, mas o meu objetivo é fazer a
-diferença, mesmo que falhe miseravelmente.
+Eu fiquei vendo e escutando palestras sobre como perder vícios. E tudo foi por
+água abaixo. Comecei a perder a disciplina nos treinos, comecei a ficar mais em
+casa. Enfim, comecei a regredir em coisas que avancei muito nesses 5 meses.
+
+Como se reerguer? É assumir as falhas, engolir, e voltar para a vibe anterior.
+Eu realmente espero que as pessoas que estão a minha volta se surpreendam que
+a flor que irá florescer. São pessoas muito queridas, e eu quero que elas
+continuem de certa forma torcendo por mim.
+
+Agora, a meta é parar de dar palco e tempo para pessoas e plataformas que não
+importa na minha vida. Pelo menos agora.
+
+É ir para cima dos problemas.
