@@ -1,7 +1,7 @@
 ---
 title: 'Eu vou terminar o que me propus a fazer. Essa equação vai ser solucionada.'
 description: 'O sentimento de culpa, a angústia que vivenciei.'
-tags: mudanca, postura, força
+tags: mudanca, postura, forca
 ---
 
 ////
